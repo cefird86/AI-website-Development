@@ -3,19 +3,29 @@
 <head>
 	<title>ChatGPT Website</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 <body>
-	<div class="header">
+	<header>
 		<h1>ChatGPT Website</h1>
-	</div>
+	</header>
 
 	<div class="container">
-		<p>This website was created with ChatGPT.</p>
+		<aside>
+			<nav>
+				<ul>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="about.php">About</a></li>
+				</ul>
+			</nav>
+		</aside>
+
+		<main>
+			<p>This website was created with ChatGPT.</p>
+		</main>
 	</div>
 
-	<div class="footer">
+	<footer>
 		<p>&copy; 2023 ChatGPT. All rights reserved.</p>
-	</div>
+	</footer>
 </body>
 </html>
