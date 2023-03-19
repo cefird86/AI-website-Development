@@ -15,12 +15,14 @@
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="about.php">About</a></li>
+                    <li><a href="comments.php">Comments</a></li>
 				</ul>
 			</nav>
 		</aside>
 
 		<main>
-			<p>This website was created with ChatGPT.</p>
+			<p>This website was created using only ChatGPT.</p>
+            <img src="/images/neural.jpg" alt="neural" class="center-image">
 		</main>
 	</div>
 

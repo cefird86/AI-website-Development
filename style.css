@@ -8,6 +8,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
 }
 
 header {
@@ -40,8 +41,10 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
-    color: #111;
+nav ul li a:hover {
+    color: #fff;
+    background-color: #333;
+    transition: all 0.3s ease;
 }
 
 h1 {
@@ -67,4 +70,9 @@ p {
 
 .btn:hover {
     background-color: #111;
+}
+
+.center-image {
+    display: block;
+    margin: 0 auto;
 }
