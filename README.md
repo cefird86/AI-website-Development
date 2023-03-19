@@ -11,3 +11,8 @@ Finally, I am extremely new at coding, which is why I am posting this onto GitHu
 Told GPT to create a basic index.php file with a header and footer. It did so without issue, all I had to do was ask it to adjust the content to be centered.
 
 I did the same with the about.php file. I even asked it to include the content about what chatGPT's abilities were.
+
+# Had GPT create a login system, and a basic game
+I started with some issues with the login system, because I manually entered login data into the database, but when chatGPT created the login.php file, it was looking for a hashed password, so I had chatGPT create a signup.php page and ensured that it hashed the password before passing it to the database. This fixed the issue.
+
+I had GPT create a hangman game, which I had no issues in uploading and implementing. My next step is getting a graphic placed on the page so that the hangman game looks like a hangman game!
