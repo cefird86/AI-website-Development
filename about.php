@@ -6,9 +6,19 @@
 
 </head>
 <body>
-	<div class="header">
-		<h1>About ChatGPT</h1>
-	</div>
+<header>
+		<h1>ChatGPT Website</h1>
+	</header>
+    
+    <div class="container">
+		<aside>
+			<nav>
+				<ul>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="about.php">About</a></li>
+				</ul>
+			</nav>
+		</aside>
 
 	<div class="container">
 		<p>ChatGPT is a language model created by OpenAI that uses deep learning algorithms to generate human-like responses to natural language prompts. It can be used for a variety of tasks, including generating text, answering questions, and creating websites.</p>
