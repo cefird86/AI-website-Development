@@ -90,6 +90,8 @@ if (!$conn) {
         </div>
         <button type="submit" class="btn">Login</button>
       </form>
+      <p><a href="forgot-password.php">Forgot your password?</a></p>
+
     </div>
   </main>
   <footer>

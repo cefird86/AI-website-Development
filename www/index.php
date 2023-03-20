@@ -5,13 +5,15 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+ //Uncomment the next line if you want to see what the $_SESSION key is
+//print_r($_SESSION);
 
-// Check if the user is logged in
-//if (!isset($_SESSION['user_id'])) {
+ //Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
   // User is not logged in, redirect to the login page
-//  header('Location: login.php');
-//  exit();
-//}
+//header('Location: login.php');
+  //exit();
+}
 
 // Connect to the database
 // Include the config file
@@ -19,11 +21,6 @@ require_once '../config.php';
 
 // Connect to the database
 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-
-// Check if the connection was successful
-if (!$conn) {
-  die('Could not connect to the database: ' . mysqli_connect_error());
-}
 
 // Check if the connection was successful
 if (!$conn) {

@@ -47,6 +47,12 @@ nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
+.profile-pic {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  
+
 h1 {
     font-size: 3rem;
     margin: 0;
