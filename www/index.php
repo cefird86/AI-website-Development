@@ -55,12 +55,15 @@ mysqli_close($conn);
   <main>
     <div class="container">
       <?php if (isset($_SESSION['user_id'])): ?>
-        <p>Welcome, <?php echo $username; ?> to My Website!</p>
-        <p>This is a website created with ChatGPT.</p>
+        <p>Welcome, <?php echo $username; ?>, to My Website!</p>
+        <p>This is a website created with ChatGPT.</p><br>
       <?php else: ?>
         <h2>Welcome to My Website</h2>
         <p>This is a website created with ChatGPT.</p>
       <?php endif; ?>
+      <p>This website is entirely designed, developed, and maintained using the power of artificial intelligence, specifically OpenAI's ChatGPT. Through human prompts and collaboration, ChatGPT helps create and refine the content you see here.</p>
+            <p>Artificial intelligence has come a long way in recent years, and one of its most notable capabilities is natural language processing. ChatGPT is an AI model that can understand and generate human-like text based on the prompts it receives. By harnessing this technology, we're able to build and maintain this website with minimal manual coding.</p>
+            <p>If you're interested in contributing or learning more, please visit our GitHub repository at <a href="https://github.com/cefird86/chatGPTwebsite" target="_blank">https://github.com/cefird86/chatGPTwebsite</a>. Join us in exploring the potential of AI-driven web development and experience the cutting edge of human-AI collaboration!</p>
       <img src="\images\neural.jpg" alt="A beautiful image">
     </div>
   </main>
