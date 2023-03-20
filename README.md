@@ -16,3 +16,10 @@ I did the same with the about.php file. I even asked it to include the content a
 I intitially had some issues with the login system, because I attempted to manually enter user data into the database, but when chatGPT created the login.php file, it was looking for a hashed password, so I had chatGPT create a signup.php page and ensured that it hashed the password before passing it to the database. This fixed the issue.
 
 I had GPT create a hangman game, which I had no issues in uploading and implementing. My next step is getting a graphic placed on the page so that the hangman game looks like a hangman game!
+
+Had GPT add the functionality to reset password. I'll have to make sure to add a verification method though, so that not just anyone can change passwords to someones account.
+
+# Added profiles
+Had GPT create a profile page, and also the ability to edit profiles.
+
+Had a lot of issues setting up the ability to add photos, and maintain continuity between profile.php, and update-profile.php.
