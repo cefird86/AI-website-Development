@@ -55,7 +55,8 @@ mysqli_close($conn);
   <main>
     <div class="container">
       <?php if (isset($_SESSION['user_id'])): ?>
-        <p>Welcome, <?php echo $username; ?>!</p>
+        <p>Welcome, <?php echo $username; ?> to My Website!</p>
+        <p>This is a website created with ChatGPT.</p>
       <?php else: ?>
         <h2>Welcome to My Website</h2>
         <p>This is a website created with ChatGPT.</p>
