@@ -1,0 +1,17 @@
+Sure! Here's an overview of what we've accomplished:
+
+We started by setting up the basic file structure for the web application, including a config.php file for database connection details and other global settings.
+
+We created the login functionality using PHP and MySQL. Users can enter their username and password to log in, and if their credentials are correct, they are redirected to the index.php page.
+
+We created a menu.php file that is included on all pages of the site, allowing users to easily navigate between pages.
+
+We created a logout.php file that destroys the session and redirects the user to the login page.
+
+We created the ability for users to create new groups and join existing groups. Groups are stored in a MySQL database table called my_groups, and group membership is stored in a table called group_members.
+
+We added functionality to display the newest 3 created groups on the index.php page, including the date the group was created and the number of members in the group.
+
+We added functionality to display all groups that the user is a member of on the groups.php page, allowing users to easily access their groups and view group content.
+
+Overall, we've created a basic social media site that allows users to create and join groups, post content, and interact with other users. Of course, there is always room for improvement and further development, but we've established a strong foundation for a functional and user-friendly web application.
