@@ -1,5 +1,8 @@
 # AI-website-Development
-My usage of artificial intelligence to create a fully functional website
+My usage of artificial intelligence to create a fully functional website, with as little editing from humans as possible.
+The goal is to see if I (who knows very little about coding) can talk AI through creating a website using only prompts. 
+
+After the website is able to be safely put into production, I hope to get a 'red team' together to test the vulnerability of an AI created website, allowing people to essentially hack into the website.
 
 ## Version 0.1 March 21, 2023
 
