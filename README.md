@@ -20,15 +20,11 @@ My usage of artificial intelligence to create a fully functional website
 Overall, we've created a basic social media site that allows users to create and join groups, post content, and interact with other users. Of course, there is always room for improvement and further development, but we've established a strong foundation for a functional and user-friendly web application.
 
 ## Version 0.1a March 22, 2023
-
 * We added a conditional statement to the "profile.php" page to check if the logged-in user is already friends with the user whose profile is being viewed, and display a button to send a friend request if they are not already friends.
-
-* We added a new column called "status" to the "friendships" table to store the status of the friendship.
-
-* We updated the "profile.php" page to check if the logged-in user has any pending friend requests, and display the number of pending friend requests if any.
-
-* We added a new "accept-friends.php" page to allow users to accept friend requests.
-
-* We updated the "profile.php" page to display an "Accept Friend Request" button if the logged-in user has a pending friend request from the user whose profile is being viewed.
-
-* We created the logic to update the "friendships" table when a user accepts a friend request on the "accept-friends.php" page.
+* We added a new column called "status" to the "friendships" table to store the status of the friendship.* We created the logic to update the "friendships" table when a user accepts a friend request on the "accept-friends.php" page.
+* We identified and fixed a number of syntax errors in the code for sending and accepting friend requests, including issues with variable names, missing semicolons, and incorrect SQL queries.
+* We rewrote the code for accepting friend requests from scratch to ensure that the user's friend list is updated properly when a request is accepted.
+* We added a feature to profile.php that changes the has_pending_requests column in the users table from 0 to 1 when someone clicks the "Add friend" button.
+* We modified the logic for displaying the "Add friend" button on profile.php to only show the button if the logged-in user is not already friends with the user whose profile is being viewed.
+* We added some error-handling code to prevent the user from trying to accept or send friend requests if the request does not exist or if the user does not have permission to make the request.
+* We reviewed the code for profile.php and made some changes to improve its readability and maintainability.
