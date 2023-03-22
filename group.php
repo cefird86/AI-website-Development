@@ -62,7 +62,9 @@ if ($result && mysqli_num_rows($result) > 0) {
         <p><?php echo $group_description; ?></p>
 
         <?php if ($is_member): ?>
-            <p>You are already a member of this group.</p>
+            <form action="leave-group.php" method="POST">
+            <input type="hidden" name="group_id" value="<?php echo $group_id; ?>">
+            <input type="submit" value="Leave group">
         <?php else: ?>
         <form method="post" action="join-group.php">
             <input type="hidden" name="group_id" value="<?php echo $group_id; ?>">

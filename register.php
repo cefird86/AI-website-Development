@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <header>
-        <?php include('menu.php'); ?>
+        <?php //include('menu.php'); ?> 
     </header>
 
     <main>

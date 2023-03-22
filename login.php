@@ -4,13 +4,9 @@
 session_start();
 
 if (isset($_SESSION['error'])) {
-    echo '<p>' . $_SESSION['error'] . '</p>';
+    echo '<p style="color: red;">' . $_SESSION['error'] . '</p>';
     unset($_SESSION['error']);
 }
-
-// A session is active, so you can access the session variables here
-
-
 
 ?>
 
@@ -24,22 +20,22 @@ if (isset($_SESSION['error'])) {
 </head>
 <body>
     <header>
-        <?php include('menu.php'); ?>
+        <h1>Nerdy Social Media Site</h1>
     </header>
 
-<main>
-    <h1>Login to Your Account</h1>
-    <form action="process-login.php" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+    <main>
+        <h1>Login to Your Account</h1>
+        <form action="process-login.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-        <input type="submit" value="Login">
-    </form>
-    <p>Don't have an account yet? <a href="register.php">Register now</a>.</p>
-</main>
+            <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account yet? <a href="register.php">Register now</a>.</p>
+    </main>
 
     <footer>
         <p>&copy; 2023 Nerdy Social Media Site</p>
