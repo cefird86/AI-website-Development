@@ -31,3 +31,12 @@ Overall, we've created a basic social media site that allows users to create and
 * We modified the logic for displaying the "Add friend" button on profile.php to only show the button if the logged-in user is not already friends with the user whose profile is being viewed.
 * We added some error-handling code to prevent the user from trying to accept or send friend requests if the request does not exist or if the user does not have permission to make the request.
 * We reviewed the code for profile.php and made some changes to improve its readability and maintainability.
+
+** Version 0.2 March 23,2023
+* We started off by creating a basic HTML and CSS structure for a website header and navigation menu.
+* We then added PHP code to check if the user is logged in and display the appropriate links in the navigation menu.
+* We created a functions.php file to define the getUserById() function to retrieve user data from the database.
+* We modified the menu.php file to include the user's profile picture and username if they are logged in.
+* We added styles to the header and navigation menu to make it look more professional and visually appealing.
+* We aligned the Home, Groups, and Friends links to the left and the user's profile picture and username to the right.
+* We added a logout link to the navigation menu if the user is logged in.
