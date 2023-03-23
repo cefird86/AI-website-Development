@@ -1,17 +1,7 @@
 <?php
 
-// Start the session
-session_start();
-
 // Include the database connection
 require_once('../config.php');
-
-
- //Check if the user is logged in
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
-    exit;
-}
 
 ?>
 
@@ -32,13 +22,11 @@ if (!isset($_SESSION['user_id'])) {
     <main>
         <section class="hero">
             <h1>Welcome to the Nerdy Social Media Site</h1>
-            <p>You are logged in as <?php echo $_SESSION['username']; ?>.</p>
             <p>Connect with fellow nerds, join groups, and share your interests and hobbies.</p>
         </section>
 
         <section class="features">
             <div class="feature">
-            </p>
                 <?php
                     // Retrieve the 3 newest created groups
                     $query = "SELECT my_groups.*, COUNT(group_members.user_id) as member_count FROM my_groups LEFT JOIN group_members ON my_groups.id = group_members.group_id GROUP BY my_groups.id ORDER BY created_at DESC LIMIT 3";
