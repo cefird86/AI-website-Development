@@ -38,40 +38,50 @@ $user = mysqli_fetch_assoc($result);
     </header>
 
     <main>
-        <h1><?php echo $user['username']; ?>'s Profile</h1>
-        <p><strong>Email:</strong> <?php echo $user['email']; ?></p>
-        <p><strong>Bio:</strong> <?php echo $user['bio']; ?></p>
-<?php
+    <h1><?php echo $user['username']; ?>'s Profile</h1>
+    <?php if ($user['photo_url']) { ?>
+        <img class="profile-photo" src="<?php echo $user['photo_url']; ?>" alt="Profile Photo">
+    <?php } ?>
+    <div class="profile-details">
+        <p class="profile-email"><strong>Email:</strong> <?php echo $user['email']; ?></p>
+        <p class="profile-bio"><strong>Bio:</strong> <?php echo $user['bio']; ?></p>
+    </div>
 
-// Check if the logged-in user and the user being viewed are already friends
-if ($_SESSION['user_id'] != $user_id) {
-    $query = "SELECT * FROM friendships WHERE (user_id = {$_SESSION['user_id']} AND friend_id = {$user_id}) OR (user_id = {$user_id} AND friend_id = {$_SESSION['user_id']})";
-    $result = mysqli_query($conn, $query);
+    <?php
+            // If the logged-in user is viewing their own profile, display a link to edit-profile.php
+            if ($_SESSION['user_id'] == $user_id) {
+                echo '<a href="edit-profile.php">Edit Profile</a><br>';
+            }
 
-    // If the two users are not friends, display a button to send a friend request
-    if (!$result || mysqli_num_rows($result) == 0) {
-        echo '<form action="send-friend-request.php" method="POST">';
-        echo '<input type="hidden" name="friend_id" value="' . $user_id . '">';
-        echo '<input type="submit" value="Add friend">';
-        echo '</form>';
-        // Update the has_pending_requests column in the users table
-$query = "UPDATE users SET has_pending_requests = 1 WHERE id = {$_SESSION['user_id']}";
-$result = mysqli_query($conn, $query);
+            // Check if the logged-in user and the user being viewed are already friends
+            if ($_SESSION['user_id'] != $user_id) {
+                $query = "SELECT * FROM friendships WHERE (user_id = {$_SESSION['user_id']} AND friend_id = {$user_id}) OR (user_id = {$user_id} AND friend_id = {$_SESSION['user_id']})";
+                $result = mysqli_query($conn, $query);
 
-if (!$result) {
-    die('Error: Could not update has_pending_requests.');
-}
-    } else {
-        $friendship = mysqli_fetch_assoc($result);
-        if ($friendship['status'] == 'pending' && $friendship['user_id'] != $_SESSION['user_id']) {
-            echo '<p>You have a friend request from this user.</p>';
-        }
-    }
-}
-?>
+                // If the two users are not friends, display a button to send a friend request
+                if (!$result || mysqli_num_rows($result) == 0) {
+                    echo '<form action="send-friend-request.php" method="POST">';
+                    echo '<input type="hidden" name="friend_id" value="' . $user_id . '">';
+                    echo '<input type="submit" value="Add friend">';
+                    echo '</form>';
+                    // Update the has_pending_requests column in the users table
+                    $query = "UPDATE users SET has_pending_requests = 1 WHERE id = {$_SESSION['user_id']}";
+                    $result = mysqli_query($conn, $query);
+
+                    if (!$result) {
+                        die('Error: Could not update has_pending_requests.');
+                    }
+                } else {
+                    $friendship = mysqli_fetch_assoc($result);
+                    if ($friendship['status'] == 'pending' && $friendship['user_id'] != $_SESSION['user_id']) {
+                        echo '<p>You have a friend request from this user.</p>';
+                    }
+                }
+            }
+        ?>
     </main>
 
-    <footer>
+    <footer> 
         <p>&copy; 2023 Nerdy Social Media Site</p>
     </footer>
 </body>
