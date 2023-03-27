@@ -28,6 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get the form data
     $username = $_POST['username'];
     $email = $_POST['email'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
     $bio = mysqli_real_escape_string($conn, $_POST['bio']);
 
 
@@ -48,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         // Check file size
-        if ($_FILES["photo"]["size"] > 500000) {
+        if ($_FILES["photo"]["size"] > 5000000) {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
@@ -87,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Update the user's information in the database
-    $query = "UPDATE users SET username = '$username', email = '$email', bio = '$bio' WHERE id = $user_id";
+    $query = "UPDATE users SET username = IF('$username' = '', username, '$username'), email = IF('$email' = '', email, '$email'), bio = IF('$bio' = '', bio, '$bio'), first_name = IF('$first_name' = '', first_name, '$first_name'), last_name = IF('$last_name' = '', last_name, '$last_name') WHERE id = $user_id";
     $result = mysqli_query($conn, $query);
 
     if (!$result) {
@@ -123,6 +125,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <label for="email">Email</label>
             <input type="email" name="email" value="<?php echo $row['email']; ?>" required>
+
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" value="<?php echo $row['first_name']; ?>" required>
+
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" value="<?php echo $row['last_name']; ?>" required>
 
             <label for="bio">Bio</label>
             <textarea name="bio"><?php echo $row['bio']; ?></textarea>

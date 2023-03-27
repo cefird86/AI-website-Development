@@ -40,6 +40,9 @@ $row = mysqli_fetch_assoc($result);
 
     <main>
         <h1><?php echo $row['username']; ?>'s Profile</h1>
+        <?php if ($row['photo_url']) { ?>
+        <img class="profile-photo" src="<?php echo $row['photo_url']; ?>" alt="Profile Photo">
+    <?php } ?>
         <p>Email: <?php echo $row['email']; ?></p>
         <p>Bio: <?php echo $row['bio']; ?></p>
 <?php

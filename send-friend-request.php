@@ -10,7 +10,7 @@ require_once('../config.php');
 $friend_id = $_POST['friend_id'];
 
 // Check if the friend request already exists
-$query = "SELECT * FROM friendships WHERE user_id = {$_SESSION['user_id']} AND friend_id = {$friend_id}";
+$query = "SELECT * FROM friendships WHERE (user_id = {$_SESSION['user_id']} AND friend_id = {$friend_id}) OR (user_id = {$friend_id} AND friend_id = {$_SESSION['user_id']})";
 $result = mysqli_query($conn, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
